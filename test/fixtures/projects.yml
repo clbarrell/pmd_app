@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  job_number: 1
+  total: 9.99
+  probability: 1
+  service_line: MyString
+  status: MyString
+  type: 
+  suitable_reference: false
+  client_id: 
+  contact_id: 
+
+two:
+  name: MyString
+  job_number: 1
+  total: 9.99
+  probability: 1
+  service_line: MyString
+  status: MyString
+  type: 
+  suitable_reference: false
+  client_id: 
+  contact_id: 
