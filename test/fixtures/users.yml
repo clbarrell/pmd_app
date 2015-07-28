@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  initials: MyString
+chris:
+  name: Chris Barrell 
+  email: cbarrell@fbggroup.com.au
+  initials: CBL
+  admin: true
+
+michael:
+  name: Michael Test
+  email: michael@example.com
+  initials: MTT
   admin: false
 
-two:
-  name: MyString
-  email: MyString
-  initials: MyString
-  admin: false
+cara:
+  name: Cara Davoli
+  email: cdavoli@fbggroup.com.au
+  initials: CDI
+  admin: true

@@ -1,25 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  job_number: 1
-  total: 9.99
+workshop:
+  name: Wellbeing Workshop
+  job_number: 45629
+  total: 12333.50
   probability: 1
-  service_line: MyString
-  status: MyString
-  type: 
+  service_line: Leadership
+  status: Active
+  type: Prop No Guar
   suitable_reference: false
-  client_id: 
-  contact_id: 
+  client: abs
+  contact: tim
+  
 
-two:
-  name: MyString
-  job_number: 1
-  total: 9.99
-  probability: 1
-  service_line: MyString
-  status: MyString
-  type: 
-  suitable_reference: false
-  client_id: 
-  contact_id: 

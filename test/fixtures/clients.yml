@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  Contacts: 
-  Projects: 
+abs:
+  name: ABS
 
-two:
-  name: MyString
-  Contacts: 
-  Projects: 
+
+djr:
+  name: Deptartment of Justice and Regulation
