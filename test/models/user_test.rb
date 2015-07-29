@@ -15,7 +15,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
   
-  test "email can't be invalid" do
+  test "email can't be valid" do
     @user.email = "jkls"
     assert_not @user.valid?
   end
