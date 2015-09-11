@@ -3,4 +3,7 @@ class Contact < ActiveRecord::Base
   belongs_to :client
   has_many :projects
   
+  # Validations
+  validates :name, presence: true
+  validates :client, presence: true
 end

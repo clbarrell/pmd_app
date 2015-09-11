@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727095206) do
+ActiveRecord::Schema.define(version: 20150908094612) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150727095206) do
   create_table "project_splits", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "project_id"
-    t.string   "type"
+    t.string   "role"
     t.decimal  "percentage", precision: 4, scale: 1
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150727095206) do
     t.integer  "probability"
     t.string   "service_line"
     t.string   "status"
-    t.string   "type"
+    t.string   "project_type"
     t.boolean  "suitable_reference"
     t.integer  "client_id"
     t.integer  "contact_id"
@@ -64,9 +64,9 @@ ActiveRecord::Schema.define(version: 20150727095206) do
   add_index "projects", ["contact_id"], name: "index_projects_on_contact_id"
   add_index "projects", ["job_number"], name: "index_projects_on_job_number"
   add_index "projects", ["name"], name: "index_projects_on_name"
+  add_index "projects", ["project_type"], name: "index_projects_on_project_type"
   add_index "projects", ["status"], name: "index_projects_on_status"
   add_index "projects", ["suitable_reference"], name: "index_projects_on_suitable_reference"
-  add_index "projects", ["type"], name: "index_projects_on_type"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

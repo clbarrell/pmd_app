@@ -21,8 +21,17 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "initials can't be blank" do
-    @user.name = "     "
+    @user.initials = "     "
     assert_not @user.valid?
   end  
+  
+  test "admin variable test" do
+    @user.admin = false
+    assert @user.valid?
+    # user has to have T/F for admin value
+    @user.admin = ""
+    assert_not @user.valid?
+  end
+  
 
 end

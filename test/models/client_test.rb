@@ -9,7 +9,7 @@ class ClientTest < ActiveSupport::TestCase
     assert @client.valid?
   end
   
-  test "name can't be blank" do
+  test "name can't be blank or too long" do
     @client.name = "     "
     assert_not @client.valid?
     @client.name = "a" * 201

@@ -6,7 +6,7 @@ class Client < ActiveRecord::Base
                           foreign_key: "organisation_id"
   belongs_to :organisation, class_name: "Client"
   
-  # VALIDATIONS  
+  # VALIDATIONS   
   validates :name, presence: true, length: { maximum: 200 }
   
   

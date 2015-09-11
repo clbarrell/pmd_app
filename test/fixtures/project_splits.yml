@@ -3,18 +3,18 @@
 split1:
   user: chris
   project: workshop
-  type: sales
+  role: Sales
   percentage: 80.0
 
 
 split2:
   user: michael
   project: workshop
-  type: sales
+  role: Sales
   percentage: 20.0
   
 split3:
   user: cara
   project: workshop
-  type: coordinator
+  role: Coordinator
   percentage: 
