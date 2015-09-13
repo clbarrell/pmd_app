@@ -16,15 +16,18 @@ class ContactsController < ApplicationController
   end
   
   def new
+    @contact = Contact.new
   end
 
   def show
+    @contact = Contact.find(params[:id])
   end
 
   def edit
   end
 
   def index
+    
   end
   
 end

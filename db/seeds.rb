@@ -48,16 +48,16 @@ project3 = Project.create(name: "Change Woop Project", job_number: 0003, total: 
 
 # Project Splits
 
-split1 = ProjectSplit.create(user_id: user1, project_id: project1, role: "Sales", percentage: 50)
-split2 = ProjectSplit.create(user_id: user2, project_id: project1, role: "Sales", percentage: 50)
-split3 = ProjectSplit.create(user_id: user3, project_id: project1, role: "Coordinator")
+split1 = ProjectSplit.create(user_id: user1.id, project_id: project1.id, role: "Sales", percentage: 50)
+split2 = ProjectSplit.create(user_id: user2.id, project_id: project1.id, role: "Sales", percentage: 50)
+split3 = ProjectSplit.create(user_id: user3.id, project_id: project1.id, role: "Coordinator")
 
-split4 = ProjectSplit.create(user_id: user1, project_id: project2, role: "Sales", percentage: 70)
-split5 = ProjectSplit.create(user_id: user2, project_id: project2, role: "Sales", percentage: 30)
-split6 = ProjectSplit.create(user_id: user4, project_id: project2, role: "Involved")
-split7 = ProjectSplit.create(user_id: user1, project_id: project2, role: "Coordinator")
+split4 = ProjectSplit.create(user_id: user1.id, project_id: project2.id, role: "Sales", percentage: 70)
+split5 = ProjectSplit.create(user_id: user2.id, project_id: project2.id, role: "Sales", percentage: 30)
+split6 = ProjectSplit.create(user_id: user4.id, project_id: project2.id, role: "Involved")
+split7 = ProjectSplit.create(user_id: user1.id, project_id: project2.id, role: "Coordinator")
 
-split4 = ProjectSplit.create(user_id: user3, project_id: project3, role: "Sales", percentage: 60)
-split5 = ProjectSplit.create(user_id: user2, project_id: project3, role: "Sales", percentage: 40)
-split6 = ProjectSplit.create(user_id: user4, project_id: project3, role: "Involved")
-split7 = ProjectSplit.create(user_id: user1, project_id: project3, role: "Coordinator")
+split4 = ProjectSplit.create(user_id: user3.id, project_id: project3.id, role: "Sales", percentage: 60)
+split5 = ProjectSplit.create(user_id: user2.id, project_id: project3.id, role: "Sales", percentage: 40)
+split6 = ProjectSplit.create(user_id: user4.id, project_id: project3.id, role: "Involved")
+split7 = ProjectSplit.create(user_id: user1.id, project_id: project3.id, role: "Coordinator")
