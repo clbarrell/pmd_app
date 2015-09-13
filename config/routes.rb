@@ -1,29 +1,34 @@
 Rails.application.routes.draw do
+
+  get 'clients/new'
+
+  get 'clients/show'
+
+  get 'clients/edit'
+
+  get 'clients/index'
+
+  get 'projects/new'
+
+  get 'projects/show'
+
+  get 'projects/edit'
+
+  get 'projects/index'
+
   get 'contact/new'
-
   get 'contact/show'
-
   get 'contact/edit'
-
   get 'client/new'
-
   get 'client/show'
-
   get 'client/edit'
-
   get 'project/new'
-
   get 'project/show'
-
   get 'project/edit'
-
   get 'project/list'
-
   get 'users/new'
-
   get 'users/show'
-
-  get 'users/edit'
+  #get 'users/edit'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -32,8 +37,11 @@ Rails.application.routes.draw do
   root                'static_pages#home'
   get 'help'    =>    'static_pages#help'
 
-  resources :users
-  
+  devise_for :users
+  scope "/admin" do
+    resources :users
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
