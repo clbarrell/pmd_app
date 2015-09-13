@@ -1,35 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'clients/new'
-
-  get 'clients/show'
-
-  get 'clients/edit'
-
-  get 'clients/index'
-
-  get 'projects/new'
-
-  get 'projects/show'
-
-  get 'projects/edit'
-
-  get 'projects/index'
-
-  get 'contact/new'
-  get 'contact/show'
-  get 'contact/edit'
-  get 'client/new'
-  get 'client/show'
-  get 'client/edit'
-  get 'project/new'
-  get 'project/show'
-  get 'project/edit'
-  get 'project/list'
-  get 'users/new'
-  get 'users/show'
-  #get 'users/edit'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -42,11 +12,15 @@ Rails.application.routes.draw do
     get 'signin' => 'devise/sessions#new', :as => :new_user_session
     post 'signin' => 'devise/sessions#create', :as => :user_session
     delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
-    
+
   end
   scope "/admin" do
     resources :users
   end
+
+  resources :clients
+  resources :projects
+  resources :contacts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
