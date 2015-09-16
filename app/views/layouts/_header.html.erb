@@ -1,17 +1,24 @@
- <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "PMD App", root_path, id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <li><%= link_to "Home",   user_path(current_user.id) %></li>
-            <% else %>
-              <li><%= link_to "Home",   root_path %></li>
-            <% end %>
-            <li><%= link_to "Help",   help_path %></li>
-            <%= render 'layouts/account' %>
-          </ul>
-        </nav>
-      </div>
-  </header>
-
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Brand header  Link -->
+      <%= link_to "PMD App", root_path, id: "logo", class: "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- Navbar left section if logged in -->
+      <%= render 'layouts/logged_in_header' if user_signed_in? %>
+      <!-- Nav bar right section -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Help",   help_path %></li>
+        <%= render 'layouts/account' %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>

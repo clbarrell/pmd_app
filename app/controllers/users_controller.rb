@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    # DEVISE
+  #  @user = User.new(user_params)
   #  if @user.save # when signup is successful
   #    @user.send_activation_email
   #    flash[:info] = "Please check your email to activate your account."
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
   #  end
   end
 
-  # to delete users / admin only
+  # to delete users / admin only DEVISE
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User Deleted"
@@ -28,12 +29,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
-    else
-      render 'edit'
-    end
+    # Update is sent through devise
   end
 
   def edit
