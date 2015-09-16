@@ -12,13 +12,26 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    # All the status param to show up in view
-    @filter_status = params[:status] || "all"
-    if params[:status] == "inactive"
-      @filter_status = "Delayed, Complete, and Inactive"
+    # Respond to the param status
+    case params[:status]
+      when "active"
+        @projects = @projects.where(status: "Active")
+      when "inactive"
+        #Filter all the inactive proj types
+        @projects = @projects.where(status: ["Complete","Inactive","Delayed"])
+      else
+        @projects
     end
   end
-
+  
+  def create
+  end
+  
+  def update
+  end
+  
+  def destroy
+  end
 
   private
     # Define the params that can be sent
