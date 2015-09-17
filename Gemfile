@@ -56,3 +56,4 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+ruby   '2.2.1'

@@ -1,0 +1,16 @@
+<% if client.groups.any? %>
+<!-- If there are client sub-groups then -->
+<!-- display them immediately below -->
+  <tr>
+    <td><%= client.name %></td>
+  </tr>
+  <% client.groups.each do |x| %>
+    <tr>
+      <td><%= client.name %> // <%= x.name %></td>
+    </tr>
+  <% end %>
+<% elsif client.organisation == nil %>
+  <tr>
+    <td><%= client.name %></td>
+  </tr>
+<% end %>
