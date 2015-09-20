@@ -32,9 +32,9 @@ class ProjectsController < ApplicationController
     if @project.save
       # when save is successful
       flash["notice"] = "New project created: #{@project.name}"
-      redirect_to new_project_project_split_path(project_id: @project.id)
+      redirect_to new_project_project_split_path(@project)
     else
-      render new
+      render new_project_path
     end
   end
 
