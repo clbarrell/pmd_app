@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root                'static_pages#home'
   get 'help'    =>    'static_pages#help'
 
+
+
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'signin' => 'devise/sessions#new', :as => :new_user_session
@@ -19,8 +21,17 @@ Rails.application.routes.draw do
   end
 
   resources :clients
-  resources :projects
   resources :contacts
+  
+  get 'projects/update_contacts', as: :update_contacts
+  
+  resources :projects do
+    resources :project_splits
+  end
+
+  
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

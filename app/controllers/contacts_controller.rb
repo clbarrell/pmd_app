@@ -1,5 +1,12 @@
 class ContactsController < ApplicationController
   def create
+    @contact = Contact.new(contact_params)
+    if @contact.save # when save is successful
+      flash["notice"] = "New contact created."
+      redirect_to contacts_path
+    else
+      render "new"
+    end
   end
 
   def update
@@ -26,8 +33,8 @@ class ContactsController < ApplicationController
 
   private
 
-    def user_params
-     # params.require(:user).permit(:name, :initials, :admin)
+    def contact_params
+      params.require(:contact).permit(:name, :client_id)
     end
 
 end

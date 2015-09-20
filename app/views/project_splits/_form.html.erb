@@ -1,0 +1,16 @@
+<%= semantic_form_for [@project, @project_split] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <h2>Current Project: <%= @project.name %> #<%= @project.job_number %> </h2>
+  <%= f.inputs do %>
+    <%= f.input :project, :as => :hidden %>
+    <%= f.input :user, :label => "User" %>
+    <%= f.input :role, :label => "Choose role of user", :as => :radio, :collection => %w[Coordinator Sales Involved] %>
+    <%= f.input :percentage, :label => "Choose percentage if req.", :hint => "Number must be between 0 and 100", :input_html => { :disabled => true } %>
+    <%= f.input :anymore, :label => "Do you want to add another split / user attachment?", :as => :radio, :collection => {"Yes" => true, "No" => false } %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :button_html => { :class => "btn btn-default" } %>
+  <% end %>
+
+<% end %>

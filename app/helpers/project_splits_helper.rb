@@ -1,0 +1,2 @@
+module ProjectSplitsHelper
+end

@@ -17,7 +17,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # Faker for seedingf the database
 gem 'faker'
-
+gem 'formtastic', '~> 3.1'
+gem 'formtastic-bootstrap', '~> 3.1.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,8 +1,10 @@
 class Project < ActiveRecord::Base
   belongs_to :client
   belongs_to :contact
-  has_many :project_splits
+  has_many :project_splits, :dependent => :destroy
   has_many :users, through: :project_splits
+
+  accepts_nested_attributes_for :project_splits
 
   # Validations
 
@@ -18,5 +20,9 @@ class Project < ActiveRecord::Base
   validates :status, inclusion: { in: %w(Active Delayed Complete Inactive) }
 
 
+  # Automatically Insert New Job Number
+  def newjobnum
+    write_attribute(:job_number, (Project.maximum("job_number") + 1))
+  end
 
 end

@@ -11,12 +11,24 @@ $gray-medium-light: #eaeaea;
   box-sizing:          border-box;
 }
 
+
+
 /* universal ************************/
 
 body {
-  padding-top: 58px;
+  padding-top: 45px;
 }
 
+@media (min-width: 43.75em) {
+  body {
+    padding-top: 130px;
+  }
+}
+@media (min-width: 56.25em) {
+  body {
+    padding-top: 58px;
+  }
+}
 section {
   overflow: auto;
 }
@@ -41,20 +53,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+  font-size: 2em;
+  /* 2x body copy size = 32px */
+  line-height: 1.25;
+  /* 45px / 36px */
   text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+@media (min-width: 43.75em) {
+  h1 {
+    font-size: 2.5em;
+    /* 2.5x body copy size = 40px */
+    line-height: 1.125;
+  }
+}
+
+@media (min-width: 56.25em) {
+  h1 {
+    font-size: 3em;
+    /* 3x body copy size = 48px */
+    line-height: 1.05;
+    /* keep to a multiple of the 20px line height
+    and something more appropriate for display headings */
+  }
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
+  font-size: 1.625em;
+  /* 1.625x body copy size = 26px */
+  line-height: 1.15384615;
+  /* 30px / 26px */
   text-align: center;
   font-weight: normal;
   color: $gray-light;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
 }
+
+@media (min-width: 43.75em) {
+  h2 {
+    font-size: 2em;
+    /* 2x body copy size = 32px */
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 56.25em) {
+  h2 {
+    font-size: 2.25em;
+    /* 2.25x body copy size = 36px */
+    line-height: 1.25;
+  }
+}
+
+
 
 p {
   font-size: 1.1em;
@@ -123,8 +178,33 @@ footer {
   @include box_sizing;
 }
 
+// ALERT
+
+.alert {
+  width: 40%;
+  margin: auto;
+}
+
 /* ASIDES *******************************************/
 
 aside.right {
   float: right;
+}
+
+
+/*** FORMTASTIC **************************************/
+
+form.formtastic {
+  div.radio_buttons {
+    .form-wrapper {
+      display: block;
+    }
+    .radio {
+      display: inline;
+      margin-right: 10px;
+    }
+  }
+  .boolean label {
+    font-weight: bold;
+  }
 }

@@ -23,9 +23,6 @@ class UsersController < ApplicationController
 
   # to delete users / admin only DEVISE
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User Deleted"
-    redirect_to users_url
   end
 
   def update
