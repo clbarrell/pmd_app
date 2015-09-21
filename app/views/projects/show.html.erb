@@ -15,7 +15,15 @@
           </div>
         </div>
         <div class="panel-body">
-          <span class="bg-success pull-right text-uppercase" id="project-status">Active</span>
+          <% if @project.status == "Active" %>
+            <span class="bg-success pull-right text-uppercase" id="project-status">Active</span>
+          <% elsif @project.status == "Complete" %>
+            <span class="bg-primary pull-right text-uppercase" id="project-status">Complete</span>
+          <% elsif @project.status == "Delayed" %>
+            <span class="bg-warning pull-right text-uppercase" id="project-status">Delayed</span>
+          <% elsif @project.status == "Inactive" %>
+            <span class="bg-danger pull-right text-uppercase" id="project-status">Inactive</span>
+          <% end %>
           <p><strong><%= @project.client.name %></strong>
             <br> <%= @project.contact.name %>
           </p>
@@ -23,9 +31,9 @@
             <p><%= @project.project_type %></p>
             <p><%= @project.service_line %></p>
           </div>
-          <div class="pull-right">
+          <div class="pull-right project-right">
             <p>$<%= @project.total %></p>
-            <p><%= @project.probability %></p>
+            <p><%= @project.probability %>%</p>
           </div>
           <div class="clearfix">
             <p><%= good_reference(@project) %></p>

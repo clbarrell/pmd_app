@@ -3,8 +3,8 @@
 
   <%= f.inputs do %>
     <%= f.input :name, :label => "Name" %>
-    <%= f.input :total, :label => "Estimated Total ($)" %>
-    <%= f.input :probability, :label => "Probability (%)" %>
+    <%= f.input :total, :label => "Estimated Total ($)", :prepend => '$'  %>
+    <%= f.input :probability, :label => "Probability (%)", :append => '%'  %>
     <%= f.input :service_line, :label => "Service Line", :as => :radio   , :collection => %w[Transformation Leadership Performance Wellbeing] %>
     <%= f.input :status, :label => "Project Status", :as => :radio    , :collection => %w[Active Complete Delayed Inactive] %>
     <%= f.input :project_type, :label => "Project Type", :as => :radio, :collection => %w[Proposal Guaranteed] %>
@@ -14,7 +14,7 @@
   <% end %>
 
   <%= f.actions do %>
-    <%= f.action :submit, :button_html => { :class => "btn btn-default" } %>
+    <%= f.action :submit, :button_html => { :class => "btn btn-success btn-block" } %>
   <% end %>
 
 <% end %>

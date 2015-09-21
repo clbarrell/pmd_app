@@ -7,11 +7,12 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li>User</li>
-      </ul>  
+        <% @coordinator_splits.each do |coordinator| %>
+          <li><%= coordinator.user.name %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
-  
   <div class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-title">
@@ -20,11 +21,12 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li>User, % (ordered by %)</li>
-      </ul>  
+        <% @sales_splits.each do |x| %>
+          <li><%= x.user.name %>, <%= x.percentage %>%</li>
+        <% end %>
+      </ul>
     </div>
   </div>
-  
   <div class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-title">
@@ -33,8 +35,10 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li>User</li>
-      </ul>  
+        <% @involved_splits.each do |inv| %>
+          <li><%= inv.user.name %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

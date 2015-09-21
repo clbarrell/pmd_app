@@ -80,6 +80,10 @@ That takes us to the planned feature list:
   - Allocation of total project $ accross months & then report on timeframes
   - Manage whether a proper amount of project splits have been created
 
+### Issues
+
+- Validate that no duplciation is possible for project_split relationships
+
 # Resource Explanation
 
 **Projects**

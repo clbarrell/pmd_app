@@ -5,12 +5,12 @@
     <%= f.input :project, :as => :hidden %>
     <%= f.input :user, :label => "User" %>
     <%= f.input :role, :label => "Choose role of user", :as => :radio, :collection => %w[Coordinator Sales Involved] %>
-    <%= f.input :percentage, :label => "Choose percentage if req.", :hint => "Number must be between 0 and 100", :input_html => { :disabled => true } %>
+    <%= f.input :percentage, :label => "Choose percentage if req.", :hint => "Number must be between 0 and 100", :input_html => { :disabled => true }, :append => '%'  %>
     <%= f.input :anymore, :label => "Do you want to add another split / user attachment?", :as => :radio, :collection => {"Yes" => true, "No" => false } %>
   <% end %>
 
   <%= f.actions do %>
-    <%= f.action :submit, :button_html => { :class => "btn btn-default" } %>
+    <%= f.action :submit, :button_html => { :class => "btn btn-success btn-block" } %>
   <% end %>
 
 <% end %>

@@ -3,14 +3,14 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
-
-
   def edit
     @project = Project.find(params[:id])
   end
 
   def index
     @projects = Project.all
+    @project = @projects.first
+    
     # Respond to the param status
     case params[:status]
       when "active"
@@ -39,7 +39,8 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update_attributes(project_params)
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
       flash[:success] = "Project updated"
       redirect_to @project
     else
@@ -60,9 +61,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  # GET /projects/:id
   def show
     @project = Project.find(params[:id])
     @project_splits = @project.project_splits.all
+    # Define the variabels for the splits show
+    @coordinator_splits = @project_splits.where(role: "Coordinator") || ""
+    @sales_splits = @project_splits.where(role: "Sales") || ""
+    @involved_splits = @project_splits.where(role: "Involved") || ""
   end
 
   private
