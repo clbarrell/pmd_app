@@ -33,6 +33,15 @@ class ProjectSplitsController < ApplicationController
     # Find the project first, then the split
     @project = Project.find(params[:project_id])
     @project_split = @project.project_splits.build
+    
+    # Variables for the splits show
+    if @project.project_splits.any?
+      @project_splits = @project.project_splits.all 
+    end
+    @coordinator_splits = @project_splits.where(role: "Coordinator") || ""
+    @sales_splits = @project_splits.where(role: "Sales") || ""
+    @involved_splits = @project_splits.where(role: "Involved") || ""
+    
   end
 
   # GET /projects/:project_id/comments/:id
@@ -46,6 +55,8 @@ class ProjectSplitsController < ApplicationController
     # Find the project first, then the splits
     @project = Project.find(params[:project_id])
     @project_split = @project.project_splits.find(params[:id])
+    
+    
   end
 
   def update

@@ -18,12 +18,12 @@
   </aside>
 <% elsif current_page?(controller: 'projects', action: 'edit') %>
   <aside class="right">
-        <p><%= link_to "Show Project", project_path(@project), class: "btn btn-primary" %></p>
-        <p><%= link_to "New Project", new_project_path, class: "btn btn-default" %></p>
-        <p><%= link_to "All Projects", projects_path, class: "btn btn-default" %></p>
+        <p><%= link_to "Show Project", project_path(@project), class: "btn btn-primary btn-block" %></p>
+        <p><%= link_to "New Project", new_project_path, class: "btn btn-default btn-block" %></p>
+        <p><%= link_to "All Projects", projects_path, class: "btn btn-default btn-block" %></p>
   </aside>
 <% elsif current_page?(controller: 'projects') %>
   <aside class="right">
-        <p><%= link_to "New Project", new_project_path, class: "btn btn-primary" %></p>
+        <p><%= link_to "New Project", new_project_path, class: "btn btn-primary btn-block" %></p>
   </aside>
 <% end %>
