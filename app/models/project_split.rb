@@ -15,7 +15,10 @@ class ProjectSplit < ActiveRecord::Base
   # Validate the percentage thing
   validate :percentage_needed
 
-
+  # To work out what the split amounts to
+  def split_amount
+    ((self.percentage / 100) * self.project.total).to_s(:currency)
+  end
 
   private
 
@@ -28,6 +31,8 @@ class ProjectSplit < ActiveRecord::Base
     def percentage_needed
       if role == "Sales" && !percentage
         errors.add(:percentage, "Percentage required for sales split.")
+      elsif role == "Sales" && percentage > 100
+        errors.add(:percentage, "Percentage must be between 0 and 100.")
       end
     end
 
