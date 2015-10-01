@@ -105,3 +105,7 @@ That takes us to the planned feature list:
 *Note*: Project-splits are 'nested' resources, meaning that the route is setup `projects/:project_id/project_splits` will produce all the project-splits for that specific `:project_id`. There is no way to access project splits without using a specific project. Paths become: `new_project_project_split_path`.
 
 Projects & splits are the main resources, so will probably leave it at that.
+
+### License
+
+Apache LicenseVersion 2.0, January 2004

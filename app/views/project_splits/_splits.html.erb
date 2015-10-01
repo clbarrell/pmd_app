@@ -2,7 +2,7 @@
   <div class="panel panel-info">
     <div class="panel-heading">
       <div class="panel-title">
-        <h4>Coordinator</h4>
+        <h4><%= "Coordinator".pluralize(@coordinator_splits.count) %></h4>
       </div>
     </div>
     <div class="panel-body">
@@ -16,7 +16,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-title">
-        <h4>Sales</h4>
+        <h4>Sales <%= "Split".pluralize(@sales_splits.count) %></h4>
       </div>
     </div>
     <div class="panel-body">
@@ -30,7 +30,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-title">
-        <h4>Involved</h4>
+        <h4>Involved <%= "User".pluralize(@involved_splits.count) %></h4>
       </div>
     </div>
     <div class="panel-body">

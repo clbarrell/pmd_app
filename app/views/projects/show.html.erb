@@ -18,7 +18,7 @@
           <% if @project.status == "Active" %>
             <span class="bg-success pull-right text-uppercase" id="project-status">Active</span>
           <% elsif @project.status == "Complete" %>
-            <span class="bg-primary pull-right text-uppercase" id="project-status">Complete</span>
+            <span class="bg-primary pull-right text-uppercase" id="project-status" style="color:white;">Complete</span>
           <% elsif @project.status == "Delayed" %>
             <span class="bg-warning pull-right text-uppercase" id="project-status">Delayed</span>
           <% elsif @project.status == "Inactive" %>
@@ -32,11 +32,19 @@
             <p><%= @project.service_line %></p>
           </div>
           <div class="pull-right project-right">
-            <p>$<%= @project.total %></p>
-            <p><%= @project.probability %>%</p>
+            <p><%= @project.total.to_s(:currency) %></p>
+            <p><%= @project.probability.to_s(:percentage, precision: 0) %> Probability</p>
           </div>
           <div class="clearfix">
             <p><%= good_reference(@project) %></p>
+          </div>
+          <div class="pull-left">
+            <p>Last Updated:</p>
+            <p>Created:</p>
+          </div>
+          <div class="pull-right project-right">
+            <p><%= @project.updated_at.time.to_date.to_formatted_s(:long)  %></p>
+            <p><%= @project.created_at.to_date.to_formatted_s(:long)  %></p>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 class ProjectSplitsController < ApplicationController
-
+  before_filter :authenticate_user!
   # GET /projects/:project_id/comments
   def index
     # Find the project first, then the splits
@@ -49,9 +49,13 @@ class ProjectSplitsController < ApplicationController
   end
 
   def update
+    # Find the project first, then the splits
+    @project = Project.find(params[:project_id])
+    @project_split = @project.project_splits.find(params[:id])
+
     if @project_split.update(project_split_params)
       flash[:success] = "Project Split Updated"
-      redirect_to project_project_splits_path(@project_split.project)
+      redirect_to project_path(@project)
     else
       render edit_project_project_split(@project_split)
     end
@@ -63,7 +67,7 @@ class ProjectSplitsController < ApplicationController
     @project_split = project.project_splits.find(params[:id])
     @project_split.destroy
     flash[:success] = "Project Split Deleted"
-    redirect_to project_project_splits_path(project)
+    redirect_to project_path(project)
   end
 
   private

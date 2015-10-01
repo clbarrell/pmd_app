@@ -3,18 +3,18 @@
 <!-- has to be ordered this way or otherwise gets broken -->
 <% if current_page?(controller: 'projects', action: 'index') %>
   <aside class="right">
-        <p><%= link_to "New Project", new_project_path, class: "btn btn-primary" %></p>
+        <p><%= link_to "New Project", new_project_path, class: "btn btn-primary btn-block" %></p>
   </aside>
 <% elsif current_page?(controller: 'projects', action: 'new') %>
   <aside class="right">
-        <p><%= link_to "All Projects", projects_path, class: "btn btn-primary" %></p>
+        <p><%= link_to "All Projects", projects_path, class: "btn btn-primary btn-block" %></p>
   </aside>
 <% elsif current_page?(controller: 'projects', action: 'show') %>
   <aside class="right">
-        <p><%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary" %></p>
-        <p><%= link_to "New Project Split", new_project_project_split_path(@project), class: "btn btn-default" %></p>
-        <p><%= link_to "New Project", new_project_path, class: "btn btn-default" %></p>
-        <p><%= link_to "All Projects", projects_path, class: "btn btn-default" %></p>
+        <p><%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary btn-block" %></p>
+        <p><%= link_to "New Project Split", new_project_project_split_path(@project), class: "btn btn-default btn-block" %></p>
+        <p><%= link_to "New Project", new_project_path, class: "btn btn-default btn-block" %></p>
+        <p><%= link_to "All Projects", projects_path, class: "btn btn-default btn-block" %></p>
   </aside>
 <% elsif current_page?(controller: 'projects', action: 'edit') %>
   <aside class="right">

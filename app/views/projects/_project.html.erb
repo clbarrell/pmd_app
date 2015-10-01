@@ -5,9 +5,9 @@
  <td><%= project.project_type %></td>
  <td><%= project.client.name %></td>
  <td><%= project.contact.name %></td>
- <td><%= project.probability %>%</td>
+ <td><%= project.probability.to_s(:percentage, precision: 0) %></td>
  <td><%= project.service_line %></td>
- <td>$<%= project.total %></td>
+ <td><%= project.total.to_s(:currency) %></td>
  <td><%= link_to project_path(project) do %>
   <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
 <% end %>

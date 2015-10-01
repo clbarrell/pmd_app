@@ -188,8 +188,11 @@ footer {
 /* ASIDES *******************************************/
 
 aside.right {
-  float: right;
   text-align: right;
+  position: fixed;
+  width: 10em;
+  right: 5em;
+  top: 15%;
 }
 
 .project-right {

@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!
   def new
     
     @project = Project.new
@@ -32,7 +33,7 @@ class ProjectsController < ApplicationController
 
     if @project.save
       # when save is successful
-      flash["notice"] = "New project created: #{@project.name}"
+      flash["notice"] = "New project created: #{@project.name}."
       redirect_to new_project_project_split_path(@project)
     else
       render new_project_path
@@ -50,6 +51,11 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    # Note the splits will automatically be deleted from DB too
+    @project = Project.find(params[:id])
+    @project.destroy
+    flash[:success] = "Project successfully deleted."
+    redirect_to projects_path
   end
 
   # To update the contact select input on _form
