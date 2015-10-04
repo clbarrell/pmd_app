@@ -2,15 +2,15 @@
 <!-- If there are client sub-groups then -->
 <!-- display them immediately below -->
   <tr>
-    <td><%= client.name %></td>
+    <td><%= link_to client.name, client_path(client) %></td>
   </tr>
   <% client.groups.each do |x| %>
     <tr>
-      <td><%= client.name %> // <%= x.name %></td>
+      <td><%= client.name %> // <%= link_to x.name, client_path(x) %></td>
     </tr>
   <% end %>
 <% elsif client.organisation == nil %>
   <tr>
-    <td><%= client.name %></td>
+    <td><%= link_to client.name, client_path(client) %></td>
   </tr>
 <% end %>

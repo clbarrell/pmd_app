@@ -2,13 +2,13 @@
   <div class="panel panel-info">
     <div class="panel-heading">
       <div class="panel-title">
-        <h4><%= "Coordinator".pluralize(@coordinator_splits.count) %></h4>
+        <h4><%= "Coordinator".pluralize(@project.coordinators.count) %></h4>
       </div>
     </div>
     <div class="panel-body">
       <ul>
-        <% @coordinator_splits.each do |coordinator| %>
-          <li><%= coordinator.user.name %></li>
+        <% @project.coordinators.each do |coordinator| %>
+          <li><%= coordinator %></li>
         <% end %>
       </ul>
     </div>
@@ -16,13 +16,13 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-title">
-        <h4>Sales <%= "Split".pluralize(@sales_splits.count) %></h4>
+        <h4>Sales <%= "Split".pluralize(@project.sales_splits.count) %></h4>
       </div>
     </div>
     <div class="panel-body">
       <ul>
-        <% @sales_splits.each do |x| %>
-          <li><%= x.user.name %>, <%= x.percentage %>%</li>
+        <% @project.sales_splits.each do |person| %>
+          <li><%= person %></li>
         <% end %>
       </ul>
     </div>
@@ -30,13 +30,13 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-title">
-        <h4>Involved <%= "User".pluralize(@involved_splits.count) %></h4>
+        <h4>Involved <%= "User".pluralize(@project.involved_users.count) %></h4>
       </div>
     </div>
     <div class="panel-body">
       <ul>
-        <% @involved_splits.each do |inv| %>
-          <li><%= inv.user.name %></li>
+        <% @project.involved_users.each do |inv| %>
+          <li><%= inv %></li>
         <% end %>
       </ul>
     </div>

@@ -7,6 +7,10 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @contacts = @client.contacts
+    
+    @active_projects = @client.projects.where(status: "Active") || ""
+    @inactive_projects = @client.projects.where(status: ["Complete","Inactive","Delayed"]) || ""
   end
 
   def edit

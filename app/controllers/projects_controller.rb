@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_filter :authenticate_user!
   def new
-    
+
     @project = Project.new
   end
 
@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @project = @projects.first
-    
+
     # Respond to the param status
     case params[:status]
       when "active"
@@ -72,10 +72,6 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @project_splits = @project.project_splits.all
-    # Define the variabels for the splits show
-    @coordinator_splits = @project_splits.where(role: "Coordinator") || ""
-    @sales_splits = @project_splits.where(role: "Sales") || ""
-    @involved_splits = @project_splits.where(role: "Involved") || ""
   end
 
   private

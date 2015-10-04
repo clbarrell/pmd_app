@@ -49,6 +49,8 @@ That takes us to the planned feature list:
   - Not all can be edited yet. Still doing this.
 - Pages
   - `index` pages created for all required resources
+  - `show` pages for:
+    - Projects
 - Forms
   - New / edit forms completed for all resources
   - JS dynamic forms for project_split & project
@@ -64,9 +66,6 @@ That takes us to the planned feature list:
 
 - Fix the jquery that changed the project->contact list. Wasn't recording any values in the form
 - `Show` pages
-  - For projects (#1 prioritity)
-    - Include a link / partial of all relevant splits & user's associatied
-    - Have a 'new project' button floating top right
   - For clients
     - Include associatied contacts & list of projects
 - Clients - make it obvious / requried to have at least 1 contact. Redirect to `new_contact(client_id : @client.id)` once client created?

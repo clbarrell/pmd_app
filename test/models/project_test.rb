@@ -81,5 +81,9 @@ class ProjectTest < ActiveSupport::TestCase
     @project.status = "Complete"
     assert @project.valid?
   end
+  
+  test "coordinator function working" do
+    assert_equal @project.coordinators, "Cara Davoli"
+  end
 
 end

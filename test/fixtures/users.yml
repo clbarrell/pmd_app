@@ -2,7 +2,7 @@
 
 chris:
   name: Chris Barrell 
-  email: cbarrell@fbggroup.com.au
+  email: cbarrell@example.com.au
   initials: CBL
   admin: true
 
@@ -14,6 +14,6 @@ michael:
 
 cara:
   name: Cara Davoli
-  email: cdavoli@fbggroup.com.au
+  email: cdavoli@exa.com.au
   initials: CDI
   admin: true
