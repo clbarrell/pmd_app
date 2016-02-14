@@ -1,2 +1,79 @@
-<h1>Clients#show</h1>
-<p>Find me in app/views/clients/show.html.erb</p>
+<% provide(:title, @contact.name) %>
+<h1><%= @contact.name %> <small><%= @contact.client.name %></small></h1>
+<!-- Active Projects -->
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Active Projects
+        </div>
+      </div>
+      <% if @active_projects.empty? %>
+        <div class="panel-body">
+          None
+        </div>
+      <% else %>
+       <table class="table table-hover">
+        <thead>
+          <tr>
+             <th>Project</th>
+             <th>Coordinators</th>
+             <th>Service Line</th>
+             <th>Project total</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @active_projects.each do |proj| %>
+            <tr>
+              <td><%= link_to proj.name, project_path(proj) %> (#<%= proj.job_number %>)</td>
+              <td><%= proj.coordinator_names.join(", ") %></td>
+              <td><%= proj.service_line %></td>
+              <td><%= proj.total.to_s(:currency) %></td>
+            </tr>
+          <% end %>
+         </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Inctive Projects -->
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Completed & Inactive Projects
+        </div>
+      </div>
+      <% if @inactive_projects.empty? %>
+        <div class="panel-body">
+          None
+        </div>
+      <% else %>
+       <table class="table table-hover">
+        <thead>
+          <tr>
+             <th>Project</th>
+             <th>Status</th>
+             <th>Service Line</th>
+             <th>Project total</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @inactive_projects.each do |proj| %>
+            <tr>
+              <td><%= link_to proj.name, project_path(proj) %> (#<%= proj.job_number %>)</td>
+              <td><%= proj.status %></td>
+              <td><%= proj.service_line %></td>
+              <td><%= proj.total.to_s(:currency) %></td>
+            </tr>
+          <% end %>
+         </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>

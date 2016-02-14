@@ -2,13 +2,24 @@
   <div class="panel panel-info">
     <div class="panel-heading">
       <div class="panel-title">
-        <h4><%= "Coordinator".pluralize(@project.coordinators.count) %></h4>
+        <h4><%= "Coordinator".pluralize(@project.coordinator_names.count) %></h4>
       </div>
     </div>
     <div class="panel-body">
       <ul>
-        <% @project.coordinators.each do |coordinator| %>
-          <li><%= coordinator %></li>
+        <% @project.coordinator_hash.each do |id, name| %>
+          <li><%= name %>
+          <% if id.to_i > 0 %>
+            <span class="pull-right">
+              <%= link_to edit_project_project_split_path(@project, id) do %>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+              <% end %>
+              <%= link_to project_project_split_path(@project, id), method: "delete" do %>
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              <% end %>
+            </span>
+          <% end %>
+          </li>
         <% end %>
       </ul>
     </div>

@@ -7,15 +7,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    
+
     #Splits for the tables
     @project_splits = @user.project_splits.all if @user.project_splits.any?
-    @coordinator_projects = @project_splits.where(role: "Coordinator") || ""
-    @sales_projects = @project_splits.where(role: "Sales") || ""
-    @involved_projects = @project_splits.where(role: "Involved") || "" 
-    
+    @coordinator_projects = @project_splits.where(role: "Coordinator") || "" if @user.project_splits.any?
+    @sales_projects = @project_splits.where(role: "Sales") || "" if @user.project_splits.any?
+    @involved_projects = @project_splits.where(role: "Involved") || "" if @user.project_splits.any?
+
     # Eventualyl want to work otu money amounts for this year - and focus only on active projects
-    
+
   end
 
   def create
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     # Update is sent through devise
-    
+
   end
 
   def edit

@@ -1,4 +1,5 @@
 <tr>
-  <td><%= contact.name %></td>
+  <td><%= link_to contact.name, contact_path(contact) %></td>
   <td><%= contact.client.name %></td>
+  <td style="text-align:center;"><%= contact.projects.count %> </td>
 </tr>

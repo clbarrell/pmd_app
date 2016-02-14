@@ -23,7 +23,7 @@
         <% @active_projects.each do |prj| %>
           <tr>
             <td><%= link_to prj.name, project_path(prj) %> (#<%= prj.job_number %>)</td>
-            <td><%= prj.coordinators.join(", ") %></td>
+            <td><%= prj.coordinator_names.join(", ") %></td>
           </tr>
         <% end %>
        </tbody>
@@ -41,7 +41,7 @@
       <div class="panel-body">
         <ul>
           <% @contacts.each do |con| %>
-            <li><%= con.name %> <span class="badge"><%= con.projects.count %></span></li>
+            <li><%= link_to con.name, contact_path(con) %> <span class="badge"><%= con.projects.count %> projects</span></li>
           <% end %>
         </ul>
       </div>

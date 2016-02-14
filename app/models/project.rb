@@ -26,7 +26,7 @@ class Project < ActiveRecord::Base
   end
 
   # Return names of coordinators
-  def coordinators
+  def coordinator_names
     coord_splits = self.project_splits.where(role: "Coordinator")
     names = []
     if coord_splits.any?
@@ -41,6 +41,26 @@ class Project < ActiveRecord::Base
       names << "None"
     end
   end
+  
+  # Return names of coordinators
+  def coordinator_hash
+    coord_splits = self.project_splits.where(role: "Coordinator")
+    id_splits = Hash.new
+    
+    if coord_splits.any?
+      # put names into array
+      coord_splits.each do |x|
+        id_splits[x.id] = x.user.name
+        #names << x.user.name
+      end
+      # Return names in array
+      id_splits
+    else
+      id_splits[0] = "None"
+      id_splits
+    end
+  end
+
 
   # Return sales as array
   def sales_splits

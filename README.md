@@ -65,12 +65,12 @@ That takes us to the planned feature list:
 ## TO DO
 
 - Fix the jquery that changed the project->contact list. Wasn't recording any values in the form
+- Front end form validation - http://casperin.github.io/nod/ Nod.js
 - `Show` pages
-  - For clients
-    - Include associatied contacts & list of projects
+  - For Contacts
+- `edit pages` for clients & contacts
 - Clients - make it obvious / requried to have at least 1 contact. Redirect to `new_contact(client_id : @client.id)` once client created?
 - Project_split creation
-  - On the `new` page, show all existing splits for reference
   - Have links to 'add' anther split to a form so 2 can be submitted at once? See (here)[http://www.carlos-roque.com/2014/11/18/adding-and-removing-children-from-a-form-in-rails-4/]. I now know enough jquery to do this & render more partials
 - Larger modules still to do
   - Better filtering with **Filterrific** (#2 prioritity)
@@ -82,6 +82,7 @@ That takes us to the planned feature list:
 ### Issues
 
 - Validate that no duplciation is possible for project_split relationships
+- Validate that Contact is a member of client for every prpoject!
 
 # Resource Explanation
 

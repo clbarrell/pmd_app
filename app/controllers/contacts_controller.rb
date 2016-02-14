@@ -34,6 +34,9 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    # Assoc. projects
+    @active_projects = @contact.projects.where(status: "Active") || ""
+    @inactive_projects = @contact.projects.where(status: ["Complete","Inactive","Delayed"]) || ""
   end
 
   def edit
